@@ -490,7 +490,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 100px 15px 60px;
+  padding: 80px 15px 25px;
 }
 
 #intro h1 {
