@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.registrationForm').submit(function() {
+  $('form.abstractSubmitForm').submit(function() {
     var f = $(this).find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
@@ -93,25 +93,25 @@ jQuery(document).ready(function($) {
     var formData = $(this).serialize();
     // console.log(formData)
     var googleFormURL = "https://docs.google.com/forms/d/1AMX0dVkLkvMrWdawX47yw-freAERJx8Xnw34kN8CtnM/formResponse?"; // Replace with your Google Form URL
-    const container = document.getElementById("registerContainer");
+    const container = document.getElementById("abstractContainer");
     const iframe = document.createElement("iframe");
     iframe.src = googleFormURL+formData + "&susubmit=Submit";
-    iframe.name = "register-iframe";
-    iframe.id = "register-iframe";
+    iframe.name = "abstract-iframe";
+    iframe.id = "abstract-iframe";
     iframe.style = "display:none;";
     container.innerHTML = "";
     container.appendChild(iframe);
 
 
-    var response = document.getElementById('register-iframe');
+    var response = document.getElementById('abstract-iframe');
     if (response) {
-      $("#sendregistration").addClass("show");
-      $("#errorregistration").removeClass("show");
-      $('.registrationForm').remove()
+      $("#sendabstract").addClass("show");
+      $("#errorabstract").removeClass("show");
+      $('.abstractSubmitForm').remove()
     } else {
-      $("#sendregistration").removeClass("show");
-      $("#errorregistration").addClass("show");
-      $('#errorregistration').html("There was an error submitting the form. Please try again.");
+      $("#sendabstract").removeClass("show");
+      $("#errorabstract").addClass("show");
+      $('#errorabstract').html("There was an error submitting the form. Please try again.");
     }
 
 

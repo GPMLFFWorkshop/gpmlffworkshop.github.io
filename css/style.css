@@ -468,7 +468,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../img/intro-bg.jpg) top center;
+  background: url(../media/intro-bg.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -654,7 +654,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #about {
-  background: url("../img/about-bg.jpg");
+  background: url("../media/about-bg.jpg");
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -907,7 +907,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #venue .venue-info {
-  background: url("../img/venue-info-bg.jpg") top center no-repeat;
+  background: url("../media/venue-info-bg.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -1158,7 +1158,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #subscribe {
   padding: 60px;
-  background: url(../img/subscribe-bg.jpg) center center no-repeat;
+  background: url(../media/subscribe-bg.jpg) center center no-repeat;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1537,6 +1537,70 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #e0072f;
 }
 
+
+/*--------------------------------------------------------------
+# Abstract Submit Section
+--------------------------------------------------------------*/
+
+#submit {
+  padding: 60px 0;
+}
+
+#submit .form #sendabstract {
+  color: #f82249;
+  border: 1px solid #f82249;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#submit .form #errorabstract {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#submit .form #sendabstract.show,
+#submit .form #errorabstract.show,
+#submit .form .show {
+  display: block;
+}
+
+#submit .form .validation {
+  color: red;
+  display: none;
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#submit .form input,
+#submit .form textarea {
+  padding: 10px 14px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 15px;
+}
+
+#submit .form button[type="submit"] {
+  background: #f82249;
+  border: 0;
+  padding: 10px 40px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#submit .form button[type="submit"]:hover {
+  background: #e0072f;
+}
 
 /*--------------------------------------------------------------
 # Footer
