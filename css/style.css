@@ -1024,33 +1024,26 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #sponsors .sponsor-logo {
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 15px;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  height: 100px;
   overflow: hidden;
-  height: 120px;
 }
 
-#sponsors .sponsor-logo img {
-  max-height: 80px;
-  width: auto;
+#sponsors .sponsor-logo img,
+#sponsors .sponsor-col .sponsor-logo img.img-fluid {
+  max-height: 70px !important;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
   object-fit: contain;
+  transition: all 0.4s ease-in-out;
 }
 
 #sponsors .sponsor-logo:hover img {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-#sponsors img {
-  transition: all 0.4s ease-in-out;
+  transform: scale(1.1);
 }
 
 /*--------------------------------------------------------------
