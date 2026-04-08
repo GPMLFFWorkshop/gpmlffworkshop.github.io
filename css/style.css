@@ -998,6 +998,29 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #sponsors .sponsors-wrap {
   margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#sponsors .sponsor-col {
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  #sponsors .sponsor-col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 480px) {
+  #sponsors .sponsor-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 #sponsors .sponsor-logo {
