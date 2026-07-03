@@ -259,7 +259,7 @@
           </div>
           <div class="schedule-item">
             <time>10:15–11:00</time>
-            <h4>Talk</h4>
+            <h4>Talk — Implicit ML Force Fields for MD</h4>
             <p class="speaker-name">Dr. Stefan Chmiela</p>
           </div>
           <div class="schedule-item">
@@ -327,7 +327,7 @@
           </div>
           <div class="schedule-item">
             <time>11:00–11:45</time>
-            <h4>Talk</h4>
+            <h4>Talk — Unconstrained Universal MLIPs</h4>
             <p class="speaker-name">Arslan Mazitov</p>
           </div>
           <div class="schedule-item">
@@ -1167,9 +1167,21 @@
             </div>
             <div class="col-md-8">
               <h4>Technical University of Berlin, Germany</h4>
-              <h5>Talk title: to be announced</h5>
+              <h5>Talk title: Implicit Machine Learning Force Fields Accelerate Molecular Dynamics Simulations</h5>
               <h6>Abstract</h6>
-              <p align="justify">Abstract to be announced. Details will be provided closer to the event.</p>
+              <p align="justify">We introduce a family of implicit machine learning force fields (MLFFs) defined by
+                self-consistent fixed-point equations rather than explicit stacks of neural network layers. In
+                molecular simulations, this lets us reuse intermediates across timesteps to warm-start force
+                evaluation, yielding effective single-layer MLFFs without loss of accuracy. Our approach exposes
+                architecture-agnostic efficiencies that remain inaccessible when force evaluation and trajectory
+                generation are considered separately. We demonstrate this across all three major types of graph
+                neural network force-field architectures (invariant continuous-filter convolutional networks,
+                Cartesian tensor message-passing networks, and SO(3)-equivariant spherical-tensor networks),
+                observing a consistent two- to three-fold simulation speedup and smaller memory footprint.
+                Crucially, these gains preserve atomistic resolution and the integration timestep, avoiding spatial
+                or temporal coarse graining. Our advance therefore shifts the scaling frontier of
+                quantum-mechanically faithful molecular simulation, enabling longer trajectories and larger
+                atomistic systems within fixed GPU memory budgets, from biomolecules to complex materials.</p>
             </div>
           </div>
         </div>
@@ -1281,9 +1293,22 @@
             </div>
             <div class="col-md-8">
               <h4>EPFL, Switzerland</h4>
-              <h5>Talk title: to be announced</h5>
+              <h5>Talk title: Unconstrained universality in machine learning interatomic potentials</h5>
               <h6>Abstract</h6>
-              <p align="justify">Abstract to be announced. Details will be provided closer to the event.</p>
+              <p align="justify">Machine-learning interatomic potentials (MLIPs) have greatly expanded the scope of
+                atomistic simulations by offering first-principles accuracy at a fraction of the cost. Leveraging
+                large quantum-mechanical databases and expressive architectures, recent universal models can
+                achieve qualitative accuracy across the periodic table. Traditionally, the underlying architectures
+                enforce physics-based constraints to improve transferability, but this can potentially limit
+                expressive power and increase computational cost. In this talk, I will introduce a family of
+                unconstrained universal MLIPs based on the Point Edge Transformer (PET) architecture. First, we will
+                discuss the foundations and advances of the PET-MAD model — a generally applicable MLIP trained on a
+                dataset combining stable inorganic and organic solids that has been systematically modified to
+                enhance atomic diversity. Next, we will see how scaling up the unconstrained models training to
+                large datasets allows to achieve state-of-the-art accuracy on benchmarks while retaining good
+                computational efficiency. Finally, we will review the recent steps taken in developing the PET-MAD
+                model towards creating more universal and efficient foundation MLIPs, while discussing the existing
+                challenges in the field.</p>
             </div>
           </div>
         </div>
