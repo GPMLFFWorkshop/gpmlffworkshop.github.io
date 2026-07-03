@@ -260,6 +260,16 @@
           <h2>Workshop Schedule</h2>
         </div>
 
+        <div class="schedule-legend">
+          <span class="legend-item"><span class="legend-swatch type-talk"></span>Talk</span>
+          <span class="legend-item"><span class="legend-swatch type-handson"></span>Hands-on</span>
+          <span class="legend-item"><span class="legend-swatch type-keynote"></span>Keynote / Opening</span>
+          <span class="legend-item"><span class="legend-swatch type-roundtable"></span>Round table</span>
+          <span class="legend-item"><span class="legend-swatch schedule-social"></span>Social</span>
+          <span class="legend-item"><span class="legend-swatch type-break"></span>Break</span>
+        </div>
+        <p class="text-center schedule-hint">Click a talk, keynote or hands-on session to view its details.</p>
+
         <!-- Day 1 -->
         <div class="col-lg-9 mx-auto schedule-day">
           <div class="section-header">
@@ -270,51 +280,51 @@
             <p class="text-center"><strong>Morning:</strong> Campus Limpertsberg &nbsp;|&nbsp; <strong>Afternoon:</strong> Campus Belval</p>
           </div>
 
-          <div class="schedule-item">
+          <div class="schedule-item type-keynote">
             <time>09:00–09:30</time>
             <h4>Opening Session</h4>
             <p class="speaker-name">Prof. Alexandre Tkatchenko</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-keynote schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-klaus">
             <time>09:30–10:15</time>
             <h4>Opening Keynote</h4>
             <p class="speaker-name">Prof. Dr. Klaus-Robert Müller</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-stefan">
             <time>10:15–11:00</time>
             <h4>Talk — Implicit Machine Learning Force Fields Accelerate Molecular Dynamics Simulations</h4>
             <p class="speaker-name">Dr. Stefan Chmiela</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>11:00–11:30</time>
             <h4>Coffee Break</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-yury">
             <time>11:30–12:15</time>
             <h4>Talk</h4>
             <p class="speaker-name">Dr. Yury Lysogorskiy</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-gabor">
             <time>12:15–13:00</time>
             <h4>Talk</h4>
             <p class="speaker-name">Prof. Dr. Gábor Csányi</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>13:00–15:00</time>
             <h4>Lunch Break &amp; Transfer to Campus Belval</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-handson schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-ilyes">
             <time>15:00–16:30</time>
             <h4>Hands-on Session — Tutorial On How To Train And Use The MACE Interatomic Potentials</h4>
             <p class="speaker-name">Ilyes Batatia</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>16:30–17:00</time>
             <h4>Coffee Break</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-handson schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-ilyes">
             <time>17:00–18:30</time>
-            <h4>Hands-on Session (continued) — Tutorial On How To Train And Use The MACE Interatomic Potentials</h4>
+            <h4>Hands-on Session — Tutorial On How To Train And Use The MACE Interatomic Potentials (continued)</h4>
             <p class="speaker-name">Ilyes Batatia</p>
           </div>
           <div class="schedule-item schedule-social">
@@ -334,41 +344,41 @@
             <p class="text-center"><strong>All day:</strong> Campus Belval</p>
           </div>
 
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-adil">
             <time>09:00–09:45</time>
             <h4>Talk</h4>
             <p class="speaker-name">Dr. Adil Kabylda</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-medrano">
             <time>09:45–10:30</time>
             <h4>Talk</h4>
             <p class="speaker-name">Dr. Leonardo Medrano Sandonas</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>10:30–11:00</time>
             <h4>Coffee Break</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-arslan">
             <time>11:00–11:45</time>
             <h4>Talk — Unconstrained Universality In Machine Learning Interatomic Potentials</h4>
             <p class="speaker-name">Arslan Mazitov</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>11:45–13:30</time>
             <h4>Lunch Break (on your own)</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-handson schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-tobias">
             <time>13:30–15:00</time>
             <h4>Hands-on Session — Accelerated Molecular Discovery With JAX-MLFFs: Enhanced Sampling, Conformational Analysis, And IR Spectroscopy</h4>
             <p class="speaker-name">Tobias Henkes &amp; Sergio Suárez Dou</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>15:00–15:30</time>
             <h4>Coffee Break</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-handson schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-tobias">
             <time>15:30–17:00</time>
-            <h4>Hands-on Session (continued) — Accelerated Molecular Discovery With JAX-MLFFs: Enhanced Sampling, Conformational Analysis, And IR Spectroscopy</h4>
+            <h4>Hands-on Session — Accelerated Molecular Discovery With JAX-MLFFs: Enhanced Sampling, Conformational Analysis, And IR Spectroscopy (continued)</h4>
             <p class="speaker-name">Tobias Henkes &amp; Sergio Suárez Dou</p>
           </div>
         </div>
@@ -383,21 +393,21 @@
             <p class="text-center"><strong>All day:</strong> Campus Limpertsberg</p>
           </div>
 
-          <div class="schedule-item">
+          <div class="schedule-item type-talk">
             <time>09:00–09:45</time>
             <h4>Talk — Recent Progress In SO3LR</h4>
             <p class="speaker-name">Dr. Florian Bruenig &amp; Dr. Miguel Gallegos</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-keynote">
             <time>09:45–10:30</time>
             <h4>Closing Keynote — Challenges For General-Purpose MLFFs</h4>
             <p class="speaker-name">Prof. Alexandre Tkatchenko</p>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-break">
             <time>10:30–11:00</time>
             <h4>Coffee Break</h4>
           </div>
-          <div class="schedule-item">
+          <div class="schedule-item type-roundtable">
             <time>11:00–11:45</time>
             <h4>Round Table: Future Directions</h4>
           </div>

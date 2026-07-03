@@ -794,10 +794,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .schedule-item {
-  border-bottom: 1px solid #cad4f6;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  transition: background-color ease-in-out 0.3s;
+  border-left: 4px solid #94a3b8;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(21, 43, 121, 0.08);
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s, background-color ease-in-out 0.2s;
   display: grid;
   grid-template-columns: 110px 1fr;
   column-gap: 1rem;
@@ -805,7 +808,88 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .schedule-item:hover {
-  background-color: #fff;
+  box-shadow: 0 5px 16px rgba(21, 43, 121, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Colour-coding by session type */
+#schedule .schedule-item.type-talk {
+  border-left-color: #2ea043;
+  background-color: #f1fbf4;
+}
+
+#schedule .schedule-item.type-handson {
+  border-left-color: #f97316;
+  background-color: #fff6ec;
+}
+
+#schedule .schedule-item.type-keynote {
+  border-left-color: #8b5cf6;
+  background-color: #f6f3fe;
+}
+
+#schedule .schedule-item.type-roundtable {
+  border-left-color: #0ea5e9;
+  background-color: #eef8ff;
+}
+
+#schedule .schedule-item.type-break {
+  border-left-color: #cbd5e1;
+  background-color: #f8fafc;
+  box-shadow: none;
+}
+
+#schedule .schedule-item.schedule-social {
+  border-left-color: #ec4899;
+  background-color: #fdf2f8;
+}
+
+/* Clickable rows open the matching speaker pop-up */
+#schedule .schedule-item.schedule-clickable {
+  cursor: pointer;
+}
+
+#schedule .schedule-item.schedule-clickable:hover {
+  box-shadow: 0 6px 20px rgba(21, 43, 121, 0.22);
+}
+
+/* Schedule colour legend */
+.schedule-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  max-width: 820px;
+  margin: 0 auto 10px auto;
+}
+
+.schedule-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #152b79;
+}
+
+.schedule-legend .legend-swatch {
+  display: inline-block;
+  width: 26px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 8px;
+  border-left: 4px solid #94a3b8;
+}
+
+.schedule-legend .legend-swatch.type-talk { border-left-color: #2ea043; background: #f1fbf4; }
+.schedule-legend .legend-swatch.type-handson { border-left-color: #f97316; background: #fff6ec; }
+.schedule-legend .legend-swatch.type-keynote { border-left-color: #8b5cf6; background: #f6f3fe; }
+.schedule-legend .legend-swatch.type-roundtable { border-left-color: #0ea5e9; background: #eef8ff; }
+.schedule-legend .legend-swatch.schedule-social { border-left-color: #ec4899; background: #fdf2f8; }
+.schedule-legend .legend-swatch.type-break { border-left-color: #cbd5e1; background: #f8fafc; }
+
+.schedule-hint {
+  font-size: 13px;
+  color: #5b6b9c;
+  margin-bottom: 26px;
 }
 
 #schedule .schedule-item time {
