@@ -221,6 +221,24 @@
         <div class="row" style="align-items: flex-start;">
           <div class="col-lg-3 col-md-3">
             <div class="speaker">
+              <img src="media/tkatchenko.jpg" alt="Prof. Dr. Alexandre Tkatchenko" class="img-fluid" loading="lazy">
+              <div class="details">
+                <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-tkatchenko">Prof. Dr. Alexandre Tkatchenko</a></h3>
+                <p>Université de Luxembourg, Luxembourg</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="speaker">
+              <img src="media/adil.png" alt="Dr. Adil Kabylda" class="img-fluid" loading="lazy">
+              <div class="details">
+                <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-adil">Dr. Adil Kabylda</a></h3>
+                <p>Université de Luxembourg, Luxembourg</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="speaker">
               <img src="media/tobias.jpeg" alt="Tobias Henkes" class="img-fluid" loading="lazy">
               <div class="details">
                 <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-tobias">Tobias Henkes</a></h3>
@@ -239,9 +257,18 @@
           </div>
           <div class="col-lg-3 col-md-3">
             <div class="speaker">
-              <img src="media/adil.png" alt="Dr. Adil Kabylda" class="img-fluid" loading="lazy">
+              <img src="media/florian.png" alt="Dr. Florian Bruenig" class="img-fluid" loading="lazy">
               <div class="details">
-                <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-adil">Dr. Adil Kabylda</a></h3>
+                <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-florian">Dr. Florian Bruenig</a></h3>
+                <p>Université de Luxembourg, Luxembourg</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="speaker">
+              <img src="media/mgallegos.jpeg" alt="Dr. Miguel Gallegos" class="img-fluid" loading="lazy">
+              <div class="details">
+                <h3><a href="#" data-toggle="modal" data-target="#modal-speaker-miguel">Dr. Miguel Gallegos</a></h3>
                 <p>Université de Luxembourg, Luxembourg</p>
               </div>
             </div>
@@ -280,7 +307,7 @@
             <p class="text-center"><strong>Morning:</strong> Campus Limpertsberg &nbsp;|&nbsp; <strong>Afternoon:</strong> Campus Belval</p>
           </div>
 
-          <div class="schedule-item type-keynote">
+          <div class="schedule-item type-keynote schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-tkatchenko">
             <time>09:00–09:30</time>
             <h4>Opening Session</h4>
             <p class="speaker-name">Prof. Alexandre Tkatchenko</p>
@@ -393,12 +420,12 @@
             <p class="text-center"><strong>All day:</strong> Campus Limpertsberg</p>
           </div>
 
-          <div class="schedule-item type-talk">
+          <div class="schedule-item type-talk schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-florian">
             <time>09:00–09:45</time>
             <h4>Talk — Recent Progress In SO3LR</h4>
             <p class="speaker-name">Dr. Florian Bruenig &amp; Dr. Miguel Gallegos</p>
           </div>
-          <div class="schedule-item type-keynote">
+          <div class="schedule-item type-keynote schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-tkatchenko">
             <time>09:45–10:30</time>
             <h4>Closing Keynote — Challenges For General-Purpose MLFFs</h4>
             <p class="speaker-name">Prof. Alexandre Tkatchenko</p>
@@ -1442,6 +1469,90 @@
                 enables efficient sampling and analysis of complex molecular landscapes. The tutorial highlights
                 how modern ML-driven methods can accelerate molecular discovery while providing accurate insights
                 into structure, spectroscopy, and reactivity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Prof. Dr. Alexandre Tkatchenko -->
+  <div class="modal fade" id="modal-speaker-tkatchenko" tabindex="-1" role="dialog"
+    aria-labelledby="modalTkatchenkoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTkatchenkoLabel">Prof. Dr. Alexandre Tkatchenko</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="media/tkatchenko.jpg" class="img-fluid" alt="Portrait of Prof. Dr. Alexandre Tkatchenko">
+            </div>
+            <div class="col-md-8">
+              <h4>Université de Luxembourg, Luxembourg</h4>
+              <h5>Opening Session &amp; Closing Keynote: Challenges For General-Purpose MLFFs</h5>
+              <h6>Abstract</h6>
+              <p align="justify">Abstract to be announced. Details will be provided closer to the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dr. Florian Bruenig -->
+  <div class="modal fade" id="modal-speaker-florian" tabindex="-1" role="dialog" aria-labelledby="modalFlorianLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFlorianLabel">Dr. Florian Bruenig</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="media/florian.png" class="img-fluid" alt="Portrait of Dr. Florian Bruenig">
+            </div>
+            <div class="col-md-8">
+              <h4>Université de Luxembourg, Luxembourg</h4>
+              <h5>Talk title: Recent Progress In SO3LR</h5>
+              <h6>Abstract</h6>
+              <p align="justify">Abstract to be announced. Details will be provided closer to the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dr. Miguel Gallegos -->
+  <div class="modal fade" id="modal-speaker-miguel" tabindex="-1" role="dialog" aria-labelledby="modalMiguelLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalMiguelLabel">Dr. Miguel Gallegos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="media/mgallegos.jpeg" class="img-fluid" alt="Portrait of Dr. Miguel Gallegos">
+            </div>
+            <div class="col-md-8">
+              <h4>Université de Luxembourg, Luxembourg</h4>
+              <h5>Talk title: Recent Progress In SO3LR</h5>
+              <h6>Abstract</h6>
+              <p align="justify">Abstract to be announced. Details will be provided closer to the event.</p>
             </div>
           </div>
         </div>
