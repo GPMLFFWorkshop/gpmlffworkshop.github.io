@@ -942,6 +942,42 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 0;
 }
 
+#schedule .schedule-item .schedule-room {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding: 3px 11px;
+  font-style: normal;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #0f2b6b;
+  background: rgba(25, 50, 142, 0.08);
+  border-radius: 999px;
+}
+
+#schedule .schedule-item .schedule-room i {
+  font-size: 15px;
+  line-height: 1;
+  color: #f82249;
+}
+
+.venue-rooms {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5b6b9c;
+}
+
+.venue-rooms strong {
+  color: #19328e;
+}
+
 /*--------------------------------------------------------------
 # Venue Section
 --------------------------------------------------------------*/
