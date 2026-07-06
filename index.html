@@ -45,6 +45,20 @@
 <body>
 
   <!--==========================
+    Site Notification
+  ============================-->
+  <div id="site-notification" class="site-notification" role="alert" aria-live="polite" hidden>
+    <div class="site-notification-inner">
+      <span class="site-notification-icon" aria-hidden="true">&#9432;</span>
+      <div class="site-notification-body">
+        <p class="site-notification-title">Schedule update</p>
+        <p class="site-notification-text">Day&nbsp;1 (July&nbsp;13) now begins at <strong>08:45</strong> with the Opening Session &mdash; please plan to arrive 15&nbsp;minutes earlier.</p>
+      </div>
+      <button type="button" class="site-notification-close" aria-label="Dismiss notification">&times;</button>
+    </div>
+  </div>
+
+  <!--==========================
     Header
   ============================-->
   <header id="header">
@@ -308,7 +322,7 @@
           </div>
 
           <div class="schedule-item type-keynote schedule-clickable" role="button" data-toggle="modal" data-target="#modal-speaker-tkatchenko">
-            <time>09:00–09:30</time>
+            <time>08:45–09:30</time>
             <h4>Opening Session</h4>
             <p class="speaker-name">Prof. Alexandre Tkatchenko</p>
           </div>
@@ -1694,6 +1708,35 @@
   <!-- Leaflet + Getting Around / Lunch maps -->
   <script src="lib/leaflet/leaflet.js"></script>
   <script src="js/getting-around.js"></script>
+
+  <!-- Site notification banner -->
+  <script>
+    (function () {
+      // Bump this key when the message changes so the banner shows again to everyone.
+      var NOTICE_KEY = 'gpmlff-notice-2026-07-13-0845';
+      var el = document.getElementById('site-notification');
+      if (!el) return;
+
+      var dismissed = false;
+      try { dismissed = window.localStorage.getItem(NOTICE_KEY) === '1'; } catch (e) {}
+      if (dismissed) return;
+
+      el.hidden = false;
+      // Next frame so the slide-in transition runs.
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () { el.classList.add('is-visible'); });
+      });
+
+      var closeBtn = el.querySelector('.site-notification-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          el.classList.remove('is-visible');
+          try { window.localStorage.setItem(NOTICE_KEY, '1'); } catch (e) {}
+          window.setTimeout(function () { el.hidden = true; }, 450);
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
