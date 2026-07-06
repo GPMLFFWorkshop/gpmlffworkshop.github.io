@@ -47,14 +47,12 @@
   <!--==========================
     Site Notification
   ============================-->
-  <div id="site-notification" class="site-notification" role="alert" aria-live="polite" hidden>
-    <div class="site-notification-inner">
-      <span class="site-notification-icon" aria-hidden="true">&#9432;</span>
-      <div class="site-notification-body">
-        <p class="site-notification-title">Schedule update</p>
-        <p class="site-notification-text">Day&nbsp;1 (July&nbsp;13) now begins at <strong>08:45</strong> with the Opening Session &mdash; please plan to arrive 15&nbsp;minutes earlier.</p>
-      </div>
+  <div id="site-notification" class="site-notification" role="dialog" aria-modal="true" aria-labelledby="site-notification-title" hidden>
+    <div class="site-notification-card">
       <button type="button" class="site-notification-close" aria-label="Dismiss notification">&times;</button>
+      <span class="site-notification-icon" aria-hidden="true">&#9432;</span>
+      <p class="site-notification-title" id="site-notification-title">Schedule update</p>
+      <p class="site-notification-text">Day&nbsp;1 (July&nbsp;13) now begins at <strong>08:45</strong> with the Opening Session &mdash; please plan to arrive 15&nbsp;minutes earlier.</p>
     </div>
   </div>
 
@@ -1709,32 +1707,36 @@
   <script src="lib/leaflet/leaflet.js"></script>
   <script src="js/getting-around.js"></script>
 
-  <!-- Site notification banner -->
+  <!-- Site notification popup -->
   <script>
     (function () {
-      // Bump this key when the message changes so the banner shows again to everyone.
-      var NOTICE_KEY = 'gpmlff-notice-2026-07-13-0845';
       var el = document.getElementById('site-notification');
       if (!el) return;
 
-      var dismissed = false;
-      try { dismissed = window.localStorage.getItem(NOTICE_KEY) === '1'; } catch (e) {}
-      if (dismissed) return;
-
+      // Show on every page load — the popup is not remembered/dismissed permanently.
       el.hidden = false;
-      // Next frame so the slide-in transition runs.
+      // Next frame so the fade/scale-in transition runs.
       window.requestAnimationFrame(function () {
         window.requestAnimationFrame(function () { el.classList.add('is-visible'); });
       });
 
-      var closeBtn = el.querySelector('.site-notification-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function () {
-          el.classList.remove('is-visible');
-          try { window.localStorage.setItem(NOTICE_KEY, '1'); } catch (e) {}
-          window.setTimeout(function () { el.hidden = true; }, 450);
-        });
+      function hide() {
+        el.classList.remove('is-visible');
+        window.setTimeout(function () { el.hidden = true; }, 350);
       }
+
+      var closeBtn = el.querySelector('.site-notification-close');
+      if (closeBtn) closeBtn.addEventListener('click', hide);
+
+      // Click on the dimmed backdrop (outside the card) dismisses it too.
+      el.addEventListener('click', function (e) {
+        if (e.target === el) hide();
+      });
+
+      // Esc key closes the popup.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !el.hidden) hide();
+      });
     })();
   </script>
 </body>
