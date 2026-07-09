@@ -986,23 +986,46 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 60px 0;
 }
 
-#abstracts .abstracts-content {
-  padding: 40px 30px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.15);
-}
-
-#abstracts .abstracts-icon {
-  font-size: 56px;
-  color: #f82249;
-  margin-bottom: 20px;
-}
-
 #abstracts .abstracts-text {
   font-size: 18px;
   color: #565973;
   margin-bottom: 30px;
+}
+
+#abstracts .abstracts-viewer {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.2);
+  padding: 10px;
+  overflow: hidden;
+}
+
+#abstracts .abstracts-frame {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  max-height: 1000px;
+  border: 1px solid #e4e7f0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  #abstracts .abstracts-frame {
+    height: 65vh;
+    min-height: 380px;
+  }
+}
+
+#abstracts .abstracts-fallback {
+  font-size: 14px;
+  color: #9195a2;
+  margin: 18px 0 24px 0;
+}
+
+#abstracts .abstracts-fallback a {
+  color: #f82249;
+  font-weight: 600;
 }
 
 #abstracts .abstracts-download-btn {
