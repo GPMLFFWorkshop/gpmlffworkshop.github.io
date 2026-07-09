@@ -979,6 +979,54 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
+# Booklet of Abstracts Section
+--------------------------------------------------------------*/
+
+#abstracts {
+  padding: 60px 0;
+}
+
+#abstracts .abstracts-content {
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.15);
+}
+
+#abstracts .abstracts-icon {
+  font-size: 56px;
+  color: #f82249;
+  margin-bottom: 20px;
+}
+
+#abstracts .abstracts-text {
+  font-size: 18px;
+  color: #565973;
+  margin-bottom: 30px;
+}
+
+#abstracts .abstracts-download-btn {
+  display: inline-block;
+  color: #fff;
+  background: #f82249;
+  padding: 12px 32px;
+  border-radius: 50px;
+  border: 2px solid #f82249;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all ease-in-out 0.3s;
+}
+
+#abstracts .abstracts-download-btn:hover {
+  background: #fff;
+  color: #f82249;
+}
+
+#abstracts .abstracts-download-btn i {
+  margin-right: 8px;
+}
+
+/*--------------------------------------------------------------
 # Venue Section
 --------------------------------------------------------------*/
 
