@@ -72,6 +72,7 @@
           <li><a href="#speakers">Speakers</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#abstracts">Abstracts</a></li>
+          <li><a href="#posters">Posters</a></li>
           <li><a href="#venue">Venue</a></li>
           <li><a href="#getting-around">Getting Around</a></li>
           <li><a href="#hotels">Hotels</a></li>
@@ -518,6 +519,28 @@
       </div>
     </section>
 
+
+    <!--==========================
+      Posters Section
+    ============================-->
+    <section id="posters" class="wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Online Posters</h2>
+          <p>Browse the participants&rsquo; posters, ask questions and join the discussion</p>
+        </div>
+
+        <p class="posters-intro text-center">
+          Click any poster to open it in full and leave a question or comment for the author.
+        </p>
+
+        <div class="row justify-content-center" id="posters-grid">
+          <!-- poster cards are rendered here by js/posters.js -->
+        </div>
+
+      </div>
+    </section>
 
     <!--==========================
       Venue Section
@@ -1872,6 +1895,9 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <!-- Online posters grid -->
+  <script src="js/posters.js"></script>
 
   <!-- Leaflet + Getting Around / Lunch maps -->
   <script src="lib/leaflet/leaflet.js"></script>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Poster — GPMLFF Workshop</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Favicons -->
+  <link href="media/favicon.png" rel="icon">
+  <link href="media/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="poster-page">
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header" class="header-solid">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="index.html#intro"><img src="media/title_1.png" alt="GPMLFF Workshop" title=""></a>
+      </div>
+      <nav class="poster-nav pull-right">
+        <a href="index.html#intro">Home</a>
+        <a href="index.html#posters" class="active">All posters</a>
+      </nav>
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Poster Viewer
+  ============================-->
+  <main id="poster-view" class="poster-view">
+    <div class="container">
+
+      <a class="poster-back" href="index.html#posters">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> Back to all posters
+      </a>
+
+      <div class="section-header poster-header">
+        <h2 id="poster-title">Loading poster…</h2>
+        <p id="poster-author"></p>
+      </div>
+
+      <!-- The PDF -->
+      <div class="poster-viewer" id="poster-pdf-wrap">
+        <iframe class="poster-frame" id="poster-frame" src="" title="Poster PDF" loading="lazy"></iframe>
+      </div>
+
+      <p class="poster-fallback text-center" id="poster-fallback"></p>
+
+      <!-- Comments -->
+      <div class="poster-comments">
+        <div class="section-header">
+          <h2>Questions &amp; comments</h2>
+          <p>Ask the author a question or leave a comment below</p>
+        </div>
+        <div class="poster-comments-box" id="poster-comments-box">
+          <!-- giscus (or a "not configured yet" note) is injected here -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" class="poster-footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; <strong>GPMLFF Workshop</strong> — Université du Luxembourg, 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Poster data + Giscus config -->
+  <script src="js/posters.js"></script>
+
+  <!-- Poster viewer logic -->
+  <script>
+    (function () {
+      "use strict";
+
+      function getParam(name) {
+        var m = new RegExp("[?&]" + name + "=([^&]*)").exec(window.location.search);
+        return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : null;
+      }
+
+      var id = getParam("id");
+      var poster = id ? window.GPMLFF_getPosterById(id) : null;
+
+      var titleEl = document.getElementById("poster-title");
+      var authorEl = document.getElementById("poster-author");
+      var frameEl = document.getElementById("poster-frame");
+      var pdfWrap = document.getElementById("poster-pdf-wrap");
+      var fallbackEl = document.getElementById("poster-fallback");
+      var commentsBox = document.getElementById("poster-comments-box");
+
+      // --- Unknown / missing poster -------------------------------------
+      if (!poster) {
+        document.title = "Poster not found — GPMLFF Workshop";
+        titleEl.textContent = "Poster not found";
+        authorEl.textContent = "";
+        pdfWrap.style.display = "none";
+        fallbackEl.innerHTML =
+          'Sorry, we couldn’t find that poster. ' +
+          '<a href="index.html#posters">Browse all posters</a>.';
+        commentsBox.style.display = "none";
+        return;
+      }
+
+      // --- Header + PDF -------------------------------------------------
+      document.title = poster.title + " — GPMLFF Workshop";
+      titleEl.textContent = poster.title;
+      authorEl.innerHTML = poster.author
+        ? (poster.author + (poster.affiliation ? " &middot; " + poster.affiliation : ""))
+        : "";
+      frameEl.src = poster.pdf + "#view=FitH";
+      frameEl.title = poster.title + " — poster PDF";
+      fallbackEl.innerHTML =
+        'Can’t see the poster above? ' +
+        '<a href="' + poster.pdf + '" target="_blank" rel="noopener">Open the PDF in a new tab</a>.';
+
+      // --- Comments (giscus) -------------------------------------------
+      if (!window.GPMLFF_giscusConfigured()) {
+        commentsBox.innerHTML =
+          '<div class="poster-comments-notice">' +
+            '<i class="fa fa-comments-o" aria-hidden="true"></i>' +
+            '<p><strong>Comments aren’t switched on yet.</strong></p>' +
+            '<p>The organisers still need to finish the one-time GitHub setup ' +
+            '(enable Discussions, install the giscus app, and paste two IDs into ' +
+            '<code>js/posters.js</code>). Once done, the comment box appears here automatically.</p>' +
+          '</div>';
+        return;
+      }
+
+      var g = window.GPMLFF_GISCUS;
+      var s = document.createElement("script");
+      s.src = "https://giscus.app/client.js";
+      s.setAttribute("data-repo", g.repo);
+      s.setAttribute("data-repo-id", g.repoId);
+      s.setAttribute("data-category", g.category);
+      s.setAttribute("data-category-id", g.categoryId);
+      s.setAttribute("data-mapping", "specific");   // one thread per poster id
+      s.setAttribute("data-term", poster.id);
+      s.setAttribute("data-strict", "1");
+      s.setAttribute("data-reactions-enabled", "1");
+      s.setAttribute("data-emit-metadata", "0");
+      s.setAttribute("data-input-position", "top");
+      s.setAttribute("data-theme", g.theme || "light");
+      s.setAttribute("data-lang", g.lang || "en");
+      s.setAttribute("crossorigin", "anonymous");
+      s.async = true;
+      commentsBox.appendChild(s);
+    })();
+  </script>
+</body>
+
+</html>

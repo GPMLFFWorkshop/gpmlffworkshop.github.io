@@ -2213,3 +2213,263 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
+/*--------------------------------------------------------------
+# Online Posters Section (home page grid)
+--------------------------------------------------------------*/
+#posters {
+  padding: 60px 0;
+}
+
+#posters .posters-intro {
+  font-size: 18px;
+  color: #565973;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+#posters .posters-empty {
+  font-size: 17px;
+  color: #9195a2;
+  padding: 30px 0;
+}
+
+.poster-col {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.poster-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.2);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.poster-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 34px rgba(127, 137, 161, 0.32);
+  color: inherit;
+  text-decoration: none;
+}
+
+.poster-card-thumb {
+  height: 190px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #f4f5fa;
+}
+
+.poster-card-thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2b3556 0%, #060c22 100%);
+}
+
+.poster-card-thumb--placeholder i {
+  font-size: 58px;
+  color: #f82249;
+  opacity: 0.9;
+}
+
+.poster-card-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.poster-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #2b3556;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.poster-card-author {
+  font-size: 14px;
+  color: #9195a2;
+  margin: 0 0 18px 0;
+}
+
+.poster-card-cta {
+  margin-top: auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f82249;
+}
+
+.poster-card-cta i {
+  margin-left: 4px;
+  transition: transform 0.25s ease;
+}
+
+.poster-card:hover .poster-card-cta i {
+  transform: translateX(4px);
+}
+
+/*--------------------------------------------------------------
+# Poster Viewer page (poster.html)
+--------------------------------------------------------------*/
+.poster-page {
+  background: #fbfbfd;
+}
+
+.poster-page #header.header-solid {
+  background: rgba(6, 12, 34, 0.98);
+}
+
+.poster-page .poster-nav {
+  padding-top: 8px;
+}
+
+.poster-page .poster-nav a {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 26px;
+  transition: color 0.3s;
+}
+
+.poster-page .poster-nav a:hover,
+.poster-page .poster-nav a.active {
+  color: #f82249;
+  text-decoration: none;
+}
+
+.poster-view {
+  padding: 150px 0 60px 0;
+  min-height: 70vh;
+}
+
+.poster-back {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #565973;
+  transition: color 0.3s;
+}
+
+.poster-back:hover {
+  color: #f82249;
+  text-decoration: none;
+}
+
+.poster-view .poster-header {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.poster-view .poster-header h2 {
+  color: #2b3556;
+}
+
+.poster-view .poster-header #poster-author {
+  font-size: 16px;
+  color: #9195a2;
+  margin-top: 6px;
+}
+
+.poster-viewer {
+  max-width: 1500px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.2);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.poster-frame {
+  display: block;
+  width: 100%;
+  height: 90vh;
+  min-height: 640px;
+  max-height: 1400px;
+  border: 1px solid #e4e7f0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .poster-view {
+    padding-top: 110px;
+  }
+  .poster-frame {
+    height: 68vh;
+    min-height: 380px;
+  }
+}
+
+.poster-fallback {
+  font-size: 14px;
+  color: #9195a2;
+  margin: 18px 0 10px 0;
+}
+
+.poster-fallback a {
+  color: #f82249;
+  font-weight: 600;
+}
+
+.poster-comments {
+  max-width: 1000px;
+  margin: 50px auto 0 auto;
+}
+
+.poster-comments-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.2);
+  padding: 26px 26px 30px;
+}
+
+.poster-comments-notice {
+  text-align: center;
+  color: #565973;
+  padding: 20px 10px;
+}
+
+.poster-comments-notice i {
+  font-size: 42px;
+  color: #f82249;
+  margin-bottom: 12px;
+}
+
+.poster-comments-notice p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.poster-comments-notice code {
+  background: #f4f5fa;
+  color: #f82249;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.poster-footer {
+  background: #060c22;
+  color: #fff;
+  padding: 26px 0;
+  text-align: center;
+}
+
+.poster-footer .copyright {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
