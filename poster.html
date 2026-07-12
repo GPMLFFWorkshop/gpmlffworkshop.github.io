@@ -53,6 +53,7 @@
       </a>
 
       <div class="section-header poster-header">
+        <span class="poster-ref-badge" id="poster-ref" hidden></span>
         <h2 id="poster-title">Loading poster…</h2>
         <p id="poster-author"></p>
       </div>
@@ -130,7 +131,12 @@
       }
 
       // --- Header + PDF -------------------------------------------------
-      document.title = poster.title + " — GPMLFF Workshop";
+      document.title = (poster.ref ? poster.ref + " — " : "") + poster.title + " — GPMLFF Workshop";
+      var refEl = document.getElementById("poster-ref");
+      if (poster.ref) {
+        refEl.textContent = poster.ref;
+        refEl.hidden = false;
+      }
       titleEl.textContent = poster.title;
       authorEl.innerHTML = poster.author
         ? (poster.author + (poster.affiliation ? " &middot; " + poster.affiliation : ""))

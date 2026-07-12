@@ -18,6 +18,7 @@
 window.GPMLFF_POSTERS = [
   {
     id: "poster-moussadik",
+    ref: "O7",                             // reference number in the Book of Abstracts
     title: "CoOOH/BiVO₄ Photocatalyst for Efficient Solar Water Splitting",
     author: "Ali Moussadik, Wei Chen, Gian-Marco Rignanese",
     affiliation: "Institute of Condensed Matter and Nanosciences (IMCN), UCLouvain, Belgium",
@@ -25,6 +26,7 @@ window.GPMLFF_POSTERS = [
   },
   {
     id: "poster-khan",
+    ref: "O3",
     title: "Machine Learning Interatomic Potentials for Exploring Surface Features of Bulk Metallic Glasses",
     author: "Md Sharif Khan, Oliviero Andreussi",
     affiliation: "Department of Chemistry and Biochemistry, Boise State University, Idaho",
@@ -32,6 +34,7 @@ window.GPMLFF_POSTERS = [
   },
   {
     id: "poster-zardoshti",
+    ref: "O13",
     title: "Machine-Learning Interatomic Potentials for Structural and Dynamical Properties of Ag₂₀ Clusters",
     author: "Amir Mahdi Zardoshti, Zahra Jamshidi",
     affiliation: "Chemistry Department, Sharif University of Technology, Tehran, Iran",
@@ -39,6 +42,7 @@ window.GPMLFF_POSTERS = [
   },
   {
     id: "poster-salazar-lozas",
+    ref: "O10",
     title: "Probing the Limits of the Universal Models for Atoms: Energetic and Structural Analysis of Polyoxometalates",
     author: "Hugo Salazar-Lozas, Jordi Buils, Carles Bo, Albert Solé Daura",
     affiliation: "Institute of Chemical Research of Catalonia (ICIQ)",
@@ -46,6 +50,7 @@ window.GPMLFF_POSTERS = [
   },
   {
     id: "poster-rudenko",
+    ref: "O9",
     title: "Towards Robust Machine-Learned Interatomic Potentials for Radiation-Damaged Waste Immobilization Materials",
     author: "M. A. Rudenko, A. A. Mitrofanov",
     affiliation: "Chemistry Department, Lomonosov Moscow State University",
@@ -105,9 +110,14 @@ window.GPMLFF_GISCUS = {
           '<i class="fa fa-file-pdf-o" aria-hidden="true"></i>' +
         '</div>';
 
+    var refBadge = p.ref
+      ? '<span class="poster-card-ref">' + escapeHtml(p.ref) + '</span>'
+      : '';
+
     return '' +
       '<div class="col-lg-4 col-md-6 poster-col">' +
         '<a class="poster-card" href="' + href + '">' +
+          refBadge +
           media +
           '<div class="poster-card-body">' +
             '<h3 class="poster-card-title">' + escapeHtml(p.title) + '</h3>' +
