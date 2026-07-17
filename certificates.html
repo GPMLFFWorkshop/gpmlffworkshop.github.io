@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Certificates — GPMLFF Workshop</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="media/favicon.png" rel="icon">
+  <link href="media/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800&display=swap" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .cert-main { padding: 120px 0 80px; min-height: 70vh; }
+    .cert-intro { max-width: 760px; margin: 0 auto 28px; text-align: center; color: #555; }
+    .cert-search-wrap { max-width: 520px; margin: 0 auto 34px; position: relative; }
+    .cert-search { width: 100%; padding: 13px 18px 13px 44px; border: 1px solid #ccd;
+      border-radius: 30px; font-size: 1rem; outline: none; }
+    .cert-search:focus { border-color: #1b2c5c; box-shadow: 0 0 0 3px rgba(27,44,92,.12); }
+    .cert-search-wrap .fa { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); color: #99a; }
+    .cert-list { max-width: 820px; margin: 0 auto; list-style: none; padding: 0; }
+    .cert-item { display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; padding: 14px 18px; border: 1px solid #e6e6ee; border-radius: 12px;
+      margin-bottom: 10px; background: #fff; transition: box-shadow .15s, border-color .15s; }
+    .cert-item:hover { border-color: #c9c9dd; box-shadow: 0 4px 16px rgba(27,44,92,.07); }
+    .cert-name { font-weight: 600; color: #1b2c5c; font-size: 1.05rem; }
+    .cert-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .cert-btn { display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+      padding: 7px 14px; border-radius: 22px; font-size: .82rem; font-weight: 600;
+      background: #1b2c5c; color: #fff; white-space: nowrap; }
+    .cert-btn:hover { background: #16234a; color: #fff; }
+    .cert-btn.online { background: #6a3a7a; }
+    .cert-btn.online:hover { background: #572f64; }
+    .cert-empty { text-align: center; color: #888; padding: 30px; }
+    .cert-count { text-align: center; color: #99a; font-size: .85rem; margin-top: 22px; }
+  </style>
+</head>
+<body class="poster-page">
+
+  <header id="header" class="header-solid">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="index.html#intro"><img src="media/title_1.png" alt="GPMLFF Workshop" title=""></a>
+      </div>
+      <nav class="poster-nav pull-right">
+        <a href="index.html#intro">Home</a>
+        <a href="certificates.html" class="active">Certificates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cert-main">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-center">Certificates</h2>
+      </div>
+      <p class="cert-intro">
+        Find your name below to download your certificate for the
+        1<sup>st</sup> General-Purpose Machine-Learned Force Fields in Theory and
+        Practice Workshop (13&ndash;15 July 2026). Attendance certificates are available
+        for all in-person participants; poster-presentation certificates for poster
+        presenters (in person and online).
+      </p>
+
+      <div class="cert-search-wrap">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="cert-search" class="cert-search"
+               placeholder="Type your name&hellip;" autocomplete="off">
+      </div>
+
+      <ul class="cert-list" id="cert-list"></ul>
+      <p class="cert-empty" id="cert-empty" hidden>No certificate found for that name.
+        If you think this is a mistake, please contact the organizers.</p>
+      <p class="cert-count" id="cert-count"></p>
+    </div>
+  </main>
+
+  <footer id="footer" class="poster-footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; <strong>GPMLFF Workshop</strong> &mdash; Universit&eacute; du Luxembourg, 2026
+      </div>
+    </div>
+  </footer>
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var CERTS = [{"name": "Dr. Adil Kabylda", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Adil_Kabylda.pdf"}]}, {"name": "Akhil Kottayil", "items": [{"label": "Attendance", "file": "certificates/attendance/Akhil_Kottayil.pdf"}]}, {"name": "Dr. Àlex Solé Gómez", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Àlex_Solé_Gómez.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Àlex_Solé_Gómez.pdf"}]}, {"name": "Dr. Alexander Kolganov", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Alexander_Kolganov.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Alexander_Kolganov.pdf"}]}, {"name": "Prof. Alexandre Tkatchenko", "items": [{"label": "Attendance", "file": "certificates/attendance/Prof_Alexandre_Tkatchenko.pdf"}]}, {"name": "Ali Moussadik", "items": [{"label": "Poster presentation · online", "file": "certificates/poster_online/Ali_Moussadik.pdf"}]}, {"name": "Amir Mahdi Zardoshti", "items": [{"label": "Poster presentation · online", "file": "certificates/poster_online/Amir_Mahdi_Zardoshti.pdf"}]}, {"name": "Amirarsalan Sanati", "items": [{"label": "Attendance", "file": "certificates/attendance/Amirarsalan_Sanati.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Amirarsalan_Sanati.pdf"}]}, {"name": "Arnout Maet", "items": [{"label": "Attendance", "file": "certificates/attendance/Arnout_Maet.pdf"}]}, {"name": "Artem Stetoi", "items": [{"label": "Attendance", "file": "certificates/attendance/Artem_Stetoi.pdf"}]}, {"name": "August Rogier", "items": [{"label": "Attendance", "file": "certificates/attendance/August_Rogier.pdf"}]}, {"name": "Aurora González Sanz", "items": [{"label": "Attendance", "file": "certificates/attendance/Aurora_González_Sanz.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Aurora_González_Sanz.pdf"}]}, {"name": "Camilo Prada", "items": [{"label": "Attendance", "file": "certificates/attendance/Camilo_Prada.pdf"}]}, {"name": "Dr. Carlos Jacinto", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Carlos_Jacinto.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Carlos_Jacinto.pdf"}]}, {"name": "Charlie Franklin", "items": [{"label": "Attendance", "file": "certificates/attendance/Charlie_Franklin.pdf"}]}, {"name": "Daniel Barrena Espés", "items": [{"label": "Attendance", "file": "certificates/attendance/Daniel_Barrena_Espés.pdf"}]}, {"name": "Dr. Daniel Nagel", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Daniel_Nagel.pdf"}]}, {"name": "Dr. Esma Mutlu", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Esma_Mutlu.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Esma_Mutlu.pdf"}]}, {"name": "Evgenii Strugovshchikov", "items": [{"label": "Attendance", "file": "certificates/attendance/Evgenii_Strugovshchikov.pdf"}]}, {"name": "Fiona Ho", "items": [{"label": "Attendance", "file": "certificates/attendance/Fiona_Ho.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Fiona_Ho.pdf"}]}, {"name": "Dr. Florian Bruenig", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Florian_Bruenig.pdf"}]}, {"name": "Dr. Guo-Xu Zhang", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Guo-Xu_Zhang.pdf"}]}, {"name": "Hamza Ibrahim", "items": [{"label": "Attendance", "file": "certificates/attendance/Hamza_Ibrahim.pdf"}]}, {"name": "Hugo Salazar-Lozas", "items": [{"label": "Poster presentation · online", "file": "certificates/poster_online/Hugo_Salazar-Lozas.pdf"}]}, {"name": "Igor Gordiy", "items": [{"label": "Attendance", "file": "certificates/attendance/Igor_Gordiy.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Igor_Gordiy.pdf"}]}, {"name": "Ilyes Batatia", "items": [{"label": "Attendance", "file": "certificates/attendance/Ilyes_Batatia.pdf"}]}, {"name": "Ines Mezghani", "items": [{"label": "Attendance", "file": "certificates/attendance/Ines_Mezghani.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Ines_Mezghani.pdf"}]}, {"name": "Dr. Israel C. Ribeiro", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Israel_C_Ribeiro.pdf"}]}, {"name": "Jan Eckwert", "items": [{"label": "Attendance", "file": "certificates/attendance/Jan_Eckwert.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Jan_Eckwert.pdf"}]}, {"name": "Dr. Jonathan Zheng", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Jonathan_Zheng.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Jonathan_Zheng.pdf"}]}, {"name": "José Antonio Quiñonero Gris", "items": [{"label": "Attendance", "file": "certificates/attendance/José_Antonio_Quiñonero_Gris.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/José_Antonio_Quiñonero_Gris.pdf"}]}, {"name": "Joseph Hart", "items": [{"label": "Attendance", "file": "certificates/attendance/Joseph_Hart.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Joseph_Hart.pdf"}]}, {"name": "Joshua Futterer", "items": [{"label": "Attendance", "file": "certificates/attendance/Joshua_Futterer.pdf"}]}, {"name": "Dr. Kai Liu", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Kai_Liu.pdf"}]}, {"name": "Katja Jamina Becker", "items": [{"label": "Attendance", "file": "certificates/attendance/Katja_Jamina_Becker.pdf"}]}, {"name": "Léo Legrand", "items": [{"label": "Attendance", "file": "certificates/attendance/Léo_Legrand.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Léo_Legrand.pdf"}]}, {"name": "Dr. Luis Azevedo Antunes", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Luis_Azevedo_Antunes.pdf"}]}, {"name": "Dr. Markus Mock", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Markus_Mock.pdf"}]}, {"name": "Dr. Max Bols", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Max_Bols.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Max_Bols.pdf"}]}, {"name": "Md Sharif Khan", "items": [{"label": "Poster presentation · online", "file": "certificates/poster_online/Md_Sharif_Khan.pdf"}]}, {"name": "Dr. Miguel Gallegos González", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Miguel_Gallegos_González.pdf"}]}, {"name": "Mikhail Rudenko", "items": [{"label": "Poster presentation · online", "file": "certificates/poster_online/Mikhail_Rudenko.pdf"}]}, {"name": "Naziha Tarannam", "items": [{"label": "Attendance", "file": "certificates/attendance/Naziha_Tarannam.pdf"}]}, {"name": "Dr. Parrydeep Kaur Sachdeva", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Parrydeep_Kaur_Sachdeva.pdf"}]}, {"name": "Petra Navarčíková", "items": [{"label": "Attendance", "file": "certificates/attendance/Petra_Navarčíková.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Petra_Navarčíková.pdf"}]}, {"name": "Robbe Ponnet", "items": [{"label": "Attendance", "file": "certificates/attendance/Robbe_Ponnet.pdf"}]}, {"name": "Rony Letona", "items": [{"label": "Attendance", "file": "certificates/attendance/Rony_Letona.pdf"}]}, {"name": "Rubén Montagud", "items": [{"label": "Attendance", "file": "certificates/attendance/Rubén_Montagud.pdf"}, {"label": "Poster presentation", "file": "certificates/poster/Rubén_Montagud.pdf"}]}, {"name": "Sergio Suárez Dou", "items": [{"label": "Attendance", "file": "certificates/attendance/Sergio_Suárez_Dou.pdf"}]}, {"name": "Dr. Steph Flores", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Steph_Flores.pdf"}]}, {"name": "Dr. Stijn Fias", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Stijn_Fias.pdf"}]}, {"name": "Tobias Henkes", "items": [{"label": "Attendance", "file": "certificates/attendance/Tobias_Henkes.pdf"}]}, {"name": "Tomas Sunaert", "items": [{"label": "Attendance", "file": "certificates/attendance/Tomas_Sunaert.pdf"}]}, {"name": "Dr. Viola Giannuli", "items": [{"label": "Attendance", "file": "certificates/attendance/Dr_Viola_Giannuli.pdf"}]}, {"name": "Xiaoyun Lin", "items": [{"label": "Attendance", "file": "certificates/attendance/Xiaoyun_Lin.pdf"}]}];
+      var listEl = document.getElementById("cert-list");
+      var emptyEl = document.getElementById("cert-empty");
+      var countEl = document.getElementById("cert-count");
+      var searchEl = document.getElementById("cert-search");
+
+      function norm(s) {
+        return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+      }
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+      function btn(it) {
+        var online = /online/i.test(it.label);
+        return '<a class="cert-btn' + (online ? ' online' : '') + '" href="' +
+          encodeURI(it.file) + '" target="_blank" rel="noopener" download>' +
+          '<i class="fa fa-download" aria-hidden="true"></i> ' + esc(it.label) + '</a>';
+      }
+      function render(q) {
+        var nq = norm(q);
+        var shown = CERTS.filter(function (p) { return !nq || norm(p.name).indexOf(nq) >= 0; });
+        listEl.innerHTML = shown.map(function (p) {
+          return '<li class="cert-item"><span class="cert-name">' + esc(p.name) +
+            '</span><span class="cert-actions">' + p.items.map(btn).join("") +
+            '</span></li>';
+        }).join("");
+        emptyEl.hidden = shown.length !== 0;
+        countEl.textContent = shown.length + " of " + CERTS.length + " participants";
+      }
+      searchEl.addEventListener("input", function () { render(this.value); });
+      render("");
+    })();
+  </script>
+</body>
+</html>
